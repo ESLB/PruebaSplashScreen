@@ -29,6 +29,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="wlind.levano.eduardo.pruebas.PresentacionActivity"/>
         </activity>
+        <activity
+            android:name=".InicioActivity"
+            android:label="@string/title_activity_inicio"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".CreaEquipo">
+        </activity>
     </application>
 
 </manifest>
