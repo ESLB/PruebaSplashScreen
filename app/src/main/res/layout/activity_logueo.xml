@@ -21,10 +21,10 @@
             android:padding="15dp"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:layout_gravity="center"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/icon"/>
+            app:srcCompat="@drawable/icono_app"/>
 
         <EditText
             android:id="@+id/editText"
@@ -38,14 +38,6 @@
             android:hint="Usuario"
             android:textColorHint="#ffff"
             android:inputType="text"/>
-
-        <View
-            android:layout_height="1dp"
-            android:layout_width="match_parent"
-            android:background="#ffff"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            />
 
         <EditText
             android:textColor="#FFFFFF"
@@ -62,13 +54,6 @@
             android:ems="10"
             android:inputType="textPassword"/>
 
-        <View
-            android:layout_height="1dp"
-            android:layout_width="match_parent"
-            android:background="#ffff"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            />
         <Button
             android:id="@+id/button_iniciar_sesion"
             android:layout_marginTop="20dp"
@@ -98,8 +83,8 @@
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:scaleType="centerInside"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/if_facebook_circle_color_107175"/>
+                android:background="#ffff"
+                app:srcCompat="@drawable/logo_facebook"/>
 
             <ImageButton
                 android:id="@+id/imageButton4"
@@ -108,7 +93,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/if_google_circle_color_107180"/>
+                app:srcCompat="@drawable/logo_google"/>
 
             <ImageButton
                 android:id="@+id/imageButton2"
@@ -117,7 +102,7 @@
                 android:layout_weight="1"
                 android:scaleType="centerInside"
                 android:background="@android:color/transparent"
-                app:srcCompat="@drawable/if_instagram_circle_color_107172"/>
+                app:srcCompat="@drawable/logo_instagram"/>
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -127,14 +112,14 @@
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
 
-                app:srcCompat="@drawable/if_twitter_circle_color_107170"/>
+                app:srcCompat="@drawable/logo_twitter"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:id="@+id/textView"
@@ -144,15 +129,13 @@
                 android:paddingStart="20dp"
                 android:paddingLeft="20dp"
                 android:textColor="#FFFF"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:text="¿No estás registrado?"/>
             <Button
                 android:id="@+id/button_crear_una_cuenta"
                 android:layout_width="wrap_content"
                 android:paddingEnd="20dp"
                 android:paddingRight="20dp"
-                android:background="@android:color/transparent"
-                android:textColor="#ffff"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Crear una cuenta"/>

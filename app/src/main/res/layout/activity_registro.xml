@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,14 +8,15 @@
     android:orientation="vertical"
     android:padding="15dp"
     android:background="@color/colorPrimary"
+    android:layout_margin="8dp"
     tools:context="wlind.levano.eduardo.pruebas.RegistroActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:text="Nombre"/>
+        android:orientation="vertical">
 
     <EditText
         android:id="@+id/editText6"
@@ -27,14 +28,11 @@
         android:textSize="22dp"
         android:hint="Nombre"
         android:textColorHint="#FFFFFF"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:text="Correo"/>
+
 
     <EditText
         android:id="@+id/editText4"
@@ -44,15 +42,21 @@
         android:textSize="22dp"
         android:textColor="#FFFFFF"
         android:inputType="textPersonName"
-        android:hint="Correo"
-        android:textColorHint="#FFFFFF"/>
+        android:hint="Email"
+        android:textColorHint="#FFFFFF"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
-        android:text="Seleccione su ubicacion: "/>
+        android:text="Ubicación "
+        android:layout_marginTop="4dp"
+
+        />
 
     <Button
         android:layout_gravity="center"
@@ -62,14 +66,19 @@
         android:padding="5dp"
         android:layout_margin="10dp"
         android:textSize="16dp"
-        android:text="Ubicacion"/>
+        android:text="Elegir: "
+        android:layout_marginBottom="4dp"
+        />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        >
 
         <Button
             android:id="@+id/button7"
@@ -93,12 +102,15 @@
             android:background="@color/botones"
             android:text="Cancelar"/>
     </LinearLayout>
+
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
-        android:textSize="14dp"
+        android:textSize="16dp"
+        android:textColorHint="@color/botones"
         android:text="Acepto las condiciones de Privacidad "/>
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

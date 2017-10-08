@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-// Todo Ya hemos implementado las 5 pantallas (un splash screen en una de ellas) Falta Poner Toolbar
+// Todo Ya hemos implementado las 5 pantallas (un ejemplo_splash screen en una de ellas) Falta Poner Toolbar
 //Lidiar con el inicio de sesion (no volver a iniciar sesión una vez hecho
 //El DrawPanel
 //Nada más por ahora
@@ -18,7 +18,7 @@ public class PresentacionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_logueo);
 
         mButton_iniciar_sesion = (Button) findViewById(R.id.button_iniciar_sesion);
         mButton_crear_cuenta = (Button) findViewById(R.id.button_crear_una_cuenta);
