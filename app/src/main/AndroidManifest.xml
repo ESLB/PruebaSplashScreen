@@ -34,7 +34,9 @@
             android:label="@string/title_activity_inicio"
             android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".CreaEquipo">
+        <activity
+            android:parentActivityName=".PresentacionActivity"
+            android:name=".CreaEquipo">
         </activity>
     </application>
 
