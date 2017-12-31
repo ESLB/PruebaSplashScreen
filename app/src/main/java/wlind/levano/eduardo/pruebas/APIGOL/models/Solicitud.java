@@ -1,9 +1,8 @@
-package wlind.levano.eduardo.pruebas.APIS;
+package wlind.levano.eduardo.pruebas.APIGOL.models;
 
 //jugador , equipoSolicitado
 
 public class Solicitud {
-
 
     private String _id;
     private String jugador;

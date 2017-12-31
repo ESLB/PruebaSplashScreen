@@ -7,9 +7,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:layout_margin="8dp"
     android:padding="15dp"
-    tools:context="wlind.levano.eduardo.pruebas.InicioActivity">
+    tools:context="wlind.levano.eduardo.pruebas.Activities.InicioActivity">
 
     <TextView
         android:layout_width="wrap_content"

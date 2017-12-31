@@ -1,4 +1,4 @@
-package wlind.levano.eduardo.pruebas.APIS;
+package wlind.levano.eduardo.pruebas.APIGOL.models;
 
 //equipoRetador, equipoRetado, locacion
 

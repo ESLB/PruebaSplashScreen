@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    android:padding="20dp"
-    tools:context="wlind.levano.eduardo.pruebas.PresentacionActivity">
+    tools:context="wlind.levano.eduardo.pruebas.Activities.LoggingActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -27,7 +26,7 @@
             app:srcCompat="@drawable/icono_app"/>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/etInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -35,7 +34,7 @@
             android:maxLines="1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Usuario"
+            android:hint="E-mail o Número de Teléfono"
             android:textColorHint="#ffff"
             android:inputType="text"/>
 
@@ -44,8 +43,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-
-            android:id="@+id/editText2"
+            android:id="@+id/etPassword"
             android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -140,6 +138,18 @@
                 android:layout_weight="1"
                 android:text="Crear una cuenta"/>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtvPruebasLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColor="#FFFFFF"
+            android:maxLines="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColorHint="#ffff"
+            android:text="Nada por ahora"/>
     </LinearLayout>
     </ScrollView>
 </RelativeLayout>

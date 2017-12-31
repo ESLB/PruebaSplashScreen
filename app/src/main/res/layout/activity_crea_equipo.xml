@@ -7,9 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    android:layout_margin="10dp"
     android:background="@color/colorPrimary"
-    tools:context="wlind.levano.eduardo.pruebas.CreaEquipo">
+    tools:context="wlind.levano.eduardo.pruebas.Activities.CreaEquipo">
 
 
     <LinearLayout

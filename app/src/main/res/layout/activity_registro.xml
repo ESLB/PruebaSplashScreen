@@ -8,8 +8,7 @@
     android:orientation="vertical"
     android:padding="15dp"
     android:background="@color/colorPrimary"
-    android:layout_margin="8dp"
-    tools:context="wlind.levano.eduardo.pruebas.RegistroActivity">
+    tools:context="wlind.levano.eduardo.pruebas.Activities.RegistroActivity">
 
 
 

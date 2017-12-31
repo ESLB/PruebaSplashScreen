@@ -1,4 +1,4 @@
-package wlind.levano.eduardo.pruebas;
+package wlind.levano.eduardo.pruebas.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        startActivity(new Intent(SplashScreen.this, PresentacionActivity.class));
+        startActivity(new Intent(SplashScreen.this, LoggingActivity.class));
 
         finish();
     }

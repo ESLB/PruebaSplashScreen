@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="wlind.levano.eduardo.pruebas.Pruebas.PruebasJugador">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/txtvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name"/>
+
+        <EditText
+            android:id="@+id/txtvEdad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Edad"/>
+
+        <EditText
+            android:id="@+id/txtvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="E-mail"/>
+
+        <EditText
+            android:id="@+id/txtvPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"/>
+
+        <EditText
+            android:id="@+id/txtvUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ubicación"/>
+
+        <EditText
+            android:id="@+id/txtvTelephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Teléfono"/>
+
+        <EditText
+            android:id="@+id/txtvId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="ID"/>
+
+        <Button
+            android:id="@+id/buttonPOST"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button POST"/>
+
+        <Button
+            android:id="@+id/buttonPATCH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button PATCH"/>
+
+
+        <Button
+            android:id="@+id/buttonGET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button GET"/>
+
+        <Button
+            android:id="@+id/buttonGETTodos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button GET todos"/>
+
+        <TextView
+            android:id="@+id/txtListaDeJugadores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"/>
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>

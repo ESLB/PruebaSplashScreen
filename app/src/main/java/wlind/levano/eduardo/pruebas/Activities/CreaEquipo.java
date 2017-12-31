@@ -1,7 +1,9 @@
-package wlind.levano.eduardo.pruebas;
+package wlind.levano.eduardo.pruebas.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import wlind.levano.eduardo.pruebas.R;
 
 public class CreaEquipo extends AppCompatActivity {
 

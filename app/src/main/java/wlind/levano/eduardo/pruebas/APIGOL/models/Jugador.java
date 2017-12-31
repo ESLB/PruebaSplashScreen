@@ -1,4 +1,4 @@
-package wlind.levano.eduardo.pruebas.APIS;
+package wlind.levano.eduardo.pruebas.APIGOL.models;
 
 //nombre, edad, email, password, ubicacion, telephone
 public class Jugador {
