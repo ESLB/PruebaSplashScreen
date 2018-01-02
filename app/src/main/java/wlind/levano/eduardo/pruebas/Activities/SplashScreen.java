@@ -6,11 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        startActivity(new Intent(SplashScreen.this, LoggingActivity.class));
+        if(getSharedPreferences("GOL", 0).getBoolean("isLoginKey", false)){
+            startActivity(new Intent(SplashScreen.this, InicioActivity.class));
+        }else {
+            startActivity(new Intent(SplashScreen.this, LoggingActivity.class));
+        }
 
         finish();
     }

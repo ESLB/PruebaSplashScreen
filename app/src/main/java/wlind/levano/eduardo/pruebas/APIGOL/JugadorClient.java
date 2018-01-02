@@ -28,4 +28,7 @@ public interface JugadorClient {
     @DELETE("jugadores/{id}")
     Call<Jugador> eliminar(@Path("id") String id);
 
+    @POST("login")
+    Call<Jugador> autenticar(@Body Jugador jugador);
+
 }

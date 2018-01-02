@@ -1,16 +1,26 @@
 package wlind.levano.eduardo.pruebas.Activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import wlind.levano.eduardo.pruebas.APIGOL.JugadorClient;
+import wlind.levano.eduardo.pruebas.APIGOL.RetrofitLab;
+import wlind.levano.eduardo.pruebas.APIGOL.models.Jugador;
+import wlind.levano.eduardo.pruebas.Pruebas.Jugadores;
 import wlind.levano.eduardo.pruebas.Pruebas.PruebasJugador;
 import wlind.levano.eduardo.pruebas.R;
 
@@ -33,20 +43,14 @@ public class LoggingActivity extends AppCompatActivity {
     TextView mTVPruebasLogin;
 
     private String info, password;
-
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logueo);
         ButterKnife.bind(this);
-
-        /*mButton_iniciar_sesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoggingActivity.this, InicioActivity.class));
-            }
-        });*/
 
         mButton_crear_cuenta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +59,28 @@ public class LoggingActivity extends AppCompatActivity {
             }
         });
 
+        mSharedPreferences = getSharedPreferences("GOL", Context.MODE_PRIVATE);
+
+
+    }
+
+    @OnClick(R.id.button_SharedPreferences)
+    public void buttonSharePreferences(){
+        mEditor = mSharedPreferences.edit();
+        info = mETInfo.getText().toString();
+        password = mETPassword.getText().toString();
+        if(TodoEnOrden(this, info, password))
+        {
+            mEditor.putString("info", info);
+            mEditor.putString("password", password);
+            mEditor.putBoolean("isLoginKey", true);
+            mEditor.apply();
+
+            String info2 = mSharedPreferences.getString("info", "nada");
+            String password2 = mSharedPreferences.getString("password", "nada");
+
+            mTVPruebasLogin.setText(info2 + " " + password2);
+        }
     }
 
     @OnClick(R.id.button_iniciar_sesion)
@@ -62,13 +88,47 @@ public class LoggingActivity extends AppCompatActivity {
 
         info = mETInfo.getText().toString();
         password = mETPassword.getText().toString();
+
         if(TodoEnOrden(this, info, password)){
-            mTVPruebasLogin.setText(info + password);
+
+            Jugador jugador = new Jugador();
+            jugador.setEmail(info);
+            jugador.setTelephone(info);
+            jugador.setPassword(password);
+
+            RetrofitLab retrofitLab = RetrofitLab.getRetrofitLab();
+            JugadorClient mJugadorClient = retrofitLab.getRetrofit().create(JugadorClient.class);
+
+            Call<Jugador> call = mJugadorClient.autenticar(jugador);
+            call.enqueue(new Callback<Jugador>() {
+                @Override
+                public void onResponse(Call<Jugador> call, Response<Jugador> response) {
+                    if(response.body()!=null){
+                        mEditor = mSharedPreferences.edit();
+                        mEditor.putBoolean("isLoginKey", true);
+                        mEditor.apply();
+                        //mTVPruebasLogin.setText(response.body().getNombre());
+                        Toast.makeText(LoggingActivity.this, "Bienvenido " + response.body().getNombre(), Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoggingActivity.this, InicioActivity.class));
+                    }else{
+                        mTVPruebasLogin.setText("No autorizado");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Jugador> call, Throwable t) {
+                    mTVPruebasLogin.setText("Algo salió mal");
+                }
+            });
+
+            //mTVPruebasLogin.setText(info + password);
         }
 
     }
 
-
-
+    @OnClick(R.id.button_recyclerView)
+    public void onBTRecyclerClick(){
+        startActivity(new Intent(LoggingActivity.this, Jugadores.class));
+    }
 
 }

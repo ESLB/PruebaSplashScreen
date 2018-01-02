@@ -10,6 +10,12 @@
     android:padding="15dp"
     tools:context="wlind.levano.eduardo.pruebas.Activities.InicioActivity">
 
+    <Button
+        android:id="@+id/button_logOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,4 +88,13 @@
         android:scaleType="centerInside"
         android:layout_weight="1"
         app:srcCompat="@drawable/icono_desafia"/>
+
+    <View
+        android:padding="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ffffff"/>
+
+
+
 </LinearLayout>

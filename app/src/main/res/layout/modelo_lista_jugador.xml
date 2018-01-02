@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/RVImagen"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/logo_facebook"/>
+
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/RVNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Nombre"/>
+
+        <TextView
+            android:id="@+id/RVEdad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="19"/>
+
+        <TextView
+            android:id="@+id/RVEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="E-mail"/>
+
+        <TextView
+            android:id="@+id/RVUbicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Ubicación"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

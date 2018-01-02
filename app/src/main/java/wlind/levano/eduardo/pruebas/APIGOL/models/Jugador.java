@@ -15,6 +15,10 @@ public class Jugador {
     private String teams;
     private String perfilImagen;
 
+
+    public Jugador() {
+    }
+
     public Jugador(String nombre, Integer edad, String email, String password, String ubicacion, String telephone) {
         this.nombre = nombre;
         this.edad = edad;
