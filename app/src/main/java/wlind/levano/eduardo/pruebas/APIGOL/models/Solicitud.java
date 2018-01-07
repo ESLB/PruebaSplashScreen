@@ -8,6 +8,8 @@ public class Solicitud {
     private String jugador;
     private String equipoSolicitado;
     private Integer estadoSolicitud;
+    private boolean isVisto;
+
 
     public Solicitud(String jugador, String equipoSolicitado) {
         this.jugador = jugador;
@@ -51,5 +53,13 @@ public class Solicitud {
 
     public void setEstadoSolicitud(Integer estadoSolicitud) {
         this.estadoSolicitud = estadoSolicitud;
+    }
+
+    public boolean isVisto() {
+        return isVisto;
+    }
+
+    public void setVisto(boolean visto) {
+        isVisto = visto;
     }
 }

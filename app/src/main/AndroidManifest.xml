@@ -54,6 +54,8 @@
             android:name=".Pruebas.Jugadores"
             android:label="Jugadores Cercanos">
         </activity>
+        <activity android:name=".Activities.BienvenidaActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -110,7 +110,9 @@ public class LoggingActivity extends AppCompatActivity {
                         //mTVPruebasLogin.setText(response.body().getNombre());
                         Toast.makeText(LoggingActivity.this, "Bienvenido " + response.body().getNombre(), Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(LoggingActivity.this, InicioActivity.class));
+                        finish();
                     }else{
+                        Toast.makeText(LoggingActivity.this, "Datos incorrectos" + response.body().getNombre(), Toast.LENGTH_SHORT).show();
                         mTVPruebasLogin.setText("No autorizado");
                     }
                 }

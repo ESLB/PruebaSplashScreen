@@ -9,6 +9,7 @@ public class Reto {
     private String equipoRetado;
     private String locacion;
     private Integer estadoReto;
+    private boolean isVisto;
 
     public Reto(String equipoRetador, String equipoRetado, String locacion) {
         this.equipoRetador = equipoRetador;
@@ -62,5 +63,13 @@ public class Reto {
 
     public void setEstadoReto(Integer estadoReto) {
         this.estadoReto = estadoReto;
+    }
+
+    public boolean isVisto() {
+        return isVisto;
+    }
+
+    public void setVisto(boolean visto) {
+        isVisto = visto;
     }
 }

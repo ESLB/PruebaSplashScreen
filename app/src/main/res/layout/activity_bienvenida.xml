@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="wlind.levano.eduardo.pruebas.Activities.BienvenidaActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/IVImagenJugador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/TVNombreJugador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonCrearEquipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Equipo"/>
+
+    <Button
+        android:id="@+id/buttonMisEquipos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mis Equipos"/>
+
+    <Button
+        android:id="@+id/buttonRetos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retos"/>
+
+    <Button
+        android:id="@+id/buttonPostulaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Postulaciones"/>
+
+    <Button
+        android:id="@+id/buttonCanchas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Canchas"/>
+
+    <Button
+        android:id="@+id/buttonConfiguracionCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configuración de Cuenta"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/buttonUnirme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unirme"/>
+        <Button
+            android:id="@+id/buttonRetar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retar"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LogOut"/>
+
+    </LinearLayout>
+
+</ScrollView>

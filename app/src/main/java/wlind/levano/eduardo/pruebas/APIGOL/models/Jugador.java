@@ -15,7 +15,6 @@ public class Jugador {
     private String teams;
     private String perfilImagen;
 
-
     public Jugador() {
     }
 
