@@ -133,4 +133,10 @@ public class LoggingActivity extends AppCompatActivity {
         startActivity(new Intent(LoggingActivity.this, Jugadores.class));
     }
 
+    @OnClick(R.id.button_pruebas)
+    public void onBTPruebas(){
+        //startActivity(new Intent(LoggingActivity.this, ));
+    }
+
+
 }

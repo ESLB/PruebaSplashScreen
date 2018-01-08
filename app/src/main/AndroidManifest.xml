@@ -56,6 +56,15 @@
         </activity>
         <activity android:name=".Activities.BienvenidaActivity">
         </activity>
+        <activity
+            android:name=".Activities.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:parentActivityName=".Activities.LoggingActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="wlind.levano.eduardo.pruebas.Activities.LoggingActivity"/>
+        </activity>
     </application>
 
 </manifest>

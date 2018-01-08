@@ -182,5 +182,10 @@
             android:textColorHint="#ffff"
             android:text="Nada por ahora"/>
     </LinearLayout>
+        <Button
+            android:id="@+id/button_pruebas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prueba Actual"/>
     </ScrollView>
 </RelativeLayout>
