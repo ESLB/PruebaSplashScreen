@@ -80,8 +80,6 @@
             android:layout_height="wrap_content"
             android:text="SharedPreferences"/>
 
-
-
         <Button
             android:id="@+id/button_recyclerView"
             android:layout_marginTop="20dp"
@@ -181,11 +179,14 @@
             android:layout_marginRight="20dp"
             android:textColorHint="#ffff"
             android:text="Nada por ahora"/>
-    </LinearLayout>
+
         <Button
             android:id="@+id/button_pruebas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Prueba Actual"/>
+
+    </LinearLayout>
+
     </ScrollView>
 </RelativeLayout>

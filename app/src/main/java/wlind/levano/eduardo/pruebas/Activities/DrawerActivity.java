@@ -1,8 +1,10 @@
 package wlind.levano.eduardo.pruebas.Activities;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,24 +15,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import wlind.levano.eduardo.pruebas.Fragments.FragmentBusqueda;
+import wlind.levano.eduardo.pruebas.R;
+
 public class DrawerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, FragmentBusqueda.OnFragmentInteractionListener, BlankEquipos.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+                                    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+                                    setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -38,41 +35,46 @@ public class DrawerActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        Fragment fragment = new FragmentBusqueda();
+        getSupportFragmentManager().beginTransaction().add(R.id.content_main,fragment ).commit();
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+                                @Override
+                                public void onBackPressed() {
+                                    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                                    if (drawer.isDrawerOpen(GravityCompat.START)) {
+                                        drawer.closeDrawer(GravityCompat.START);
+                                    } else {
+                                        super.onBackPressed();
+                                    }
+                                }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.drawer, menu);
-        return true;
-    }
+                                @Override
+                                public boolean onCreateOptionsMenu(Menu menu) {
+                                    // Inflate the menu; this adds items to the action bar if it is present.
+                                    getMenuInflater().inflate(R.menu.drawer, menu);
+                                    return true;
+                                }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+                                @Override
+                                public boolean onOptionsItemSelected(MenuItem item) {
+                                    // Handle action bar item clicks here. The action bar will
+                                    // automatically handle clicks on the Home/Up button, so long
+                                    // as you specify a parent activity in AndroidManifest.xml.
+                                    int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+                                    //noinspection SimplifiableIfStatement
+                                    if (id == R.id.action_settings) {
+                                        return true;
+                                    }
 
-        return super.onOptionsItemSelected(item);
-    }
+                                    return super.onOptionsItemSelected(item);
+                                }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -80,8 +82,12 @@ public class DrawerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Fragment fragment = null;
+        boolean isfragmentSeleccionado = false;
+
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            fragment = new BlankEquipos();
+            isfragmentSeleccionado = true;
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -94,8 +100,17 @@ public class DrawerActivity extends AppCompatActivity
 
         }
 
+        if(isfragmentSeleccionado){
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main, fragment).commit();
+        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

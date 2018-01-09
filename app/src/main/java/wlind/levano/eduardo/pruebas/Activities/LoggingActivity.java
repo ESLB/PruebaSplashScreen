@@ -135,7 +135,8 @@ public class LoggingActivity extends AppCompatActivity {
 
     @OnClick(R.id.button_pruebas)
     public void onBTPruebas(){
-        //startActivity(new Intent(LoggingActivity.this, ));
+        startActivity(new Intent(LoggingActivity.this, DrawerActivity.class
+        ));
     }
 
 
