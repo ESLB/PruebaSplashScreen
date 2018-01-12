@@ -3,13 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="wlind.levano.eduardo.pruebas.Fragments.FragmentBusqueda">
+    tools:context="wlind.levano.eduardo.pruebas.Fragments.FragmentBusquedaInicio">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
@@ -26,6 +21,9 @@
             android:text="Buscar"/>
     </LinearLayout>
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 

@@ -4,34 +4,38 @@
       tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Equipos"/>
-        <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/inicio"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery"/>
+            android:title="Inicio"/>
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow"/>
+            android:id="@+id/misEquipos"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Mis Equipos"/>
+
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/partidosProgramados"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools"/>
+            android:title="Partidos Programados"/>
+        <item
+            android:id="@+id/misSolicitudes"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Mis solicitudes"/>
+
     </group>
 
     <item android:title="Communicate">
         <menu>
+
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/miPerfil"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share"/>
+                android:title="Mi Perfil"/>
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/logOut"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send"/>
+                android:title="Cerrar Sesión"/>
         </menu>
     </item>
 
