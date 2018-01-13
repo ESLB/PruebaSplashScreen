@@ -50,7 +50,7 @@
             android:hint="Contraseña"
             android:textColorHint="#ffff"
             android:ems="10"
-            android:inputType="textPassword"/>
+            android:inputType="textEmailAddress"/>
 
         <Button
             android:id="@+id/button_iniciar_sesion"

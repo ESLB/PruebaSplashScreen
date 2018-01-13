@@ -1,7 +1,7 @@
-package wlind.levano.eduardo.pruebas.APIGOL.models;
+package wlind.levano.eduardo.pruebas.API.models;
 
 //nombre, edad, email, password, ubicacion, telephone
-public class Jugador {
+public class J1Jugador {
 
     private String _id;
     private String nombre;
@@ -15,10 +15,10 @@ public class Jugador {
     private String teams;
     private String perfilImagen;
 
-    public Jugador() {
+    public J1Jugador() {
     }
 
-    public Jugador(String nombre, Integer edad, String email, String password, String ubicacion, String telephone) {
+    public J1Jugador(String nombre, Integer edad, String email, String password, String ubicacion, String telephone) {
         this.nombre = nombre;
         this.edad = edad;
         this.email = email;
@@ -27,7 +27,7 @@ public class Jugador {
         this.telephone = telephone;
     }
 
-    public Jugador(String _id, String nombre, Integer edad, String email, String password, String ubicacion, String telephone, String solicitudes, String retos, String teams, String perfilImagen) {
+    public J1Jugador(String _id, String nombre, Integer edad, String email, String password, String ubicacion, String telephone, String solicitudes, String retos, String teams, String perfilImagen) {
         this._id = _id;
         this.nombre = nombre;
         this.edad = edad;

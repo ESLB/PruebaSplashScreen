@@ -9,18 +9,17 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import wlind.levano.eduardo.pruebas.APIGOL.JugadorClient;
-import wlind.levano.eduardo.pruebas.APIGOL.RetrofitLab;
-import wlind.levano.eduardo.pruebas.APIGOL.models.Jugador;
+import wlind.levano.eduardo.pruebas.API.JugadorClient;
+import wlind.levano.eduardo.pruebas.API.RetrofitLab;
+import wlind.levano.eduardo.pruebas.API.models.J1Jugador;
 import wlind.levano.eduardo.pruebas.R;
 
 public class Jugadores extends AppCompatActivity{
 
-    private ArrayList<Jugador> mJugadores = new ArrayList<Jugador>();
+    private ArrayList<J1Jugador> mJugadores = new ArrayList<J1Jugador>();
     RecyclerView mRecyclerView;
 
     @Override
@@ -31,7 +30,7 @@ public class Jugadores extends AppCompatActivity{
         RetrofitLab retrofitLab = RetrofitLab.getRetrofitLab();
         final JugadorClient mJugadorClient = retrofitLab.getRetrofit().create(JugadorClient.class);
 
-        Call<List<Jugador>> call = mJugadorClient.pedirJugadores();
+        Call<List<J1Jugador>> call = mJugadorClient.pedirJugadores();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.RVJugadores);
 
@@ -40,17 +39,17 @@ public class Jugadores extends AppCompatActivity{
         final AdapterJugadores adapterJugadores = new AdapterJugadores(mJugadores, this);
         mRecyclerView.setAdapter(adapterJugadores);
 
-        call.enqueue(new Callback<List<Jugador>>() {
+        call.enqueue(new Callback<List<J1Jugador>>() {
             @Override
-            public void onResponse(Call<List<Jugador>> call, Response<List<Jugador>> response) {
-                List<Jugador> jugadores = response.body();
+            public void onResponse(Call<List<J1Jugador>> call, Response<List<J1Jugador>> response) {
+                List<J1Jugador> jugadores = response.body();
                 mJugadores.addAll(jugadores);
                 Toast.makeText(Jugadores.this, response.body().get(0).getEdad().toString(), Toast.LENGTH_SHORT).show();
                 adapterJugadores.notifyDataSetChanged();
             }
 
             @Override
-            public void onFailure(Call<List<Jugador>> call, Throwable t) {
+            public void onFailure(Call<List<J1Jugador>> call, Throwable t) {
                 Toast.makeText(Jugadores.this, "Problemas para contactar la BD", Toast.LENGTH_SHORT).show();
             }
         });

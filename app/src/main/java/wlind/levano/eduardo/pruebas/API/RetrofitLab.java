@@ -1,10 +1,9 @@
-package wlind.levano.eduardo.pruebas.APIGOL;
+package wlind.levano.eduardo.pruebas.API;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import wlind.levano.eduardo.pruebas.BuildConfig;
 
 
 public class RetrofitLab {

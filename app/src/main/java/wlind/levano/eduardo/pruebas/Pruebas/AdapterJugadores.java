@@ -1,7 +1,6 @@
 package wlind.levano.eduardo.pruebas.Pruebas;
 
 import android.content.Context;
-import android.content.pm.LabeledIntent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,19 +12,19 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import wlind.levano.eduardo.pruebas.APIGOL.models.Jugador;
+import wlind.levano.eduardo.pruebas.API.models.J1Jugador;
 import wlind.levano.eduardo.pruebas.R;
 
 public class AdapterJugadores extends RecyclerView.Adapter<AdapterJugadores.ViewHolderJugadores>{
 
-    private ArrayList<Jugador> mJugadores;
+    private ArrayList<J1Jugador> mJugadores;
     private Context mContex;
 
-    public AdapterJugadores(ArrayList<Jugador> jugadores) {
+    public AdapterJugadores(ArrayList<J1Jugador> jugadores) {
         mJugadores = jugadores;
     }
 
-    public AdapterJugadores(ArrayList<Jugador> jugadores, Context contex) {
+    public AdapterJugadores(ArrayList<J1Jugador> jugadores, Context contex) {
         mJugadores = jugadores;
         mContex = contex;
     }

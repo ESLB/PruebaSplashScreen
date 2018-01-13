@@ -3,14 +3,11 @@ package wlind.levano.eduardo.pruebas.Pruebas;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
-import butterknife.BindDimen;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -21,9 +18,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
-import wlind.levano.eduardo.pruebas.APIGOL.JugadorClient;
-import wlind.levano.eduardo.pruebas.APIGOL.models.Jugador;
+import wlind.levano.eduardo.pruebas.API.JugadorClient;
+import wlind.levano.eduardo.pruebas.API.models.J1Jugador;
 import wlind.levano.eduardo.pruebas.R;
 
 
@@ -79,12 +75,12 @@ public class PruebasJugador extends AppCompatActivity {
 
         String id = mTextViewId.getText().toString();
         if(TodoEnOrden(this, id)){
-            Call<Jugador> call = mJugadorClient.pedirJugador(id);
-            call.enqueue(new Callback<Jugador>() {
+            Call<J1Jugador> call = mJugadorClient.pedirJugador(id);
+            call.enqueue(new Callback<J1Jugador>() {
                 @Override
-                public void onResponse(Call<Jugador> call, Response<Jugador> response) {
+                public void onResponse(Call<J1Jugador> call, Response<J1Jugador> response) {
                     Toast.makeText(PruebasJugador.this, "Todo Bien", Toast.LENGTH_SHORT).show();
-                    Jugador jugador = response.body();
+                    J1Jugador jugador = response.body();
                     mTextViewListaJugadores.setText("id:" + jugador.get_id() + " nombre:" +
                             jugador.getNombre() + " edad:" +jugador.getEdad() + " email: " + jugador.getEmail() +
                             " password: " + jugador.getPassword() + " ubicacion: " + jugador.getUbicacion() +
@@ -93,7 +89,7 @@ public class PruebasJugador extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<Jugador> call, Throwable t) {
+                public void onFailure(Call<J1Jugador> call, Throwable t) {
                     Toast.makeText(PruebasJugador.this, "Algo salió mal", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -105,14 +101,14 @@ public class PruebasJugador extends AppCompatActivity {
     @OnClick(R.id.buttonGETTodos)
     public void onButtonGetClick(){
 
-        Call<List<Jugador>> call = mJugadorClient.pedirJugadores();
-        call.enqueue(new Callback<List<Jugador>>() {
+        Call<List<J1Jugador>> call = mJugadorClient.pedirJugadores();
+        call.enqueue(new Callback<List<J1Jugador>>() {
             @Override
-            public void onResponse(Call<List<Jugador>> call, Response<List<Jugador>> response) {
+            public void onResponse(Call<List<J1Jugador>> call, Response<List<J1Jugador>> response) {
                 Toast.makeText(PruebasJugador.this, "Todo Bien", Toast.LENGTH_SHORT).show();
-                List<Jugador> jugadores = response.body();
+                List<J1Jugador> jugadores = response.body();
                 String mensaje = "";
-                for (Jugador jugador:jugadores) {
+                for (J1Jugador jugador:jugadores) {
                     mensaje = mensaje + "  id:" + jugador.get_id() + " nombre:" +
                             jugador.getNombre() + " edad:" +jugador.getEdad() + " email: " + jugador.getEmail() +
                             " password: " + jugador.getPassword() + " ubicacion: " + jugador.getUbicacion() +
@@ -122,7 +118,7 @@ public class PruebasJugador extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Jugador>> call, Throwable t) {
+            public void onFailure(Call<List<J1Jugador>> call, Throwable t) {
 
             }
         });
@@ -141,18 +137,18 @@ public class PruebasJugador extends AppCompatActivity {
 
         if(TodoEnOrden(this, nombre, edad, email, password, ubicacion,telephone)){
 
-            Jugador jugador = new Jugador(nombre, Integer.parseInt(edad), email, password, ubicacion, telephone);
+            J1Jugador jugador = new J1Jugador(nombre, Integer.parseInt(edad), email, password, ubicacion, telephone);
 
-            Call<Jugador> call = mJugadorClient.crearJugador(jugador);
-            call.enqueue(new Callback<Jugador>() {
+            Call<J1Jugador> call = mJugadorClient.crearJugador(jugador);
+            call.enqueue(new Callback<J1Jugador>() {
                 @Override
-                public void onResponse(Call<Jugador> call, Response<Jugador> response) {
+                public void onResponse(Call<J1Jugador> call, Response<J1Jugador> response) {
                     Toast.makeText(PruebasJugador.this, response.body().getNombre(), Toast.LENGTH_SHORT).show();
                     mTextViewId.setText(response.body().get_id());
                 }
 
                 @Override
-                public void onFailure(Call<Jugador> call, Throwable t) {
+                public void onFailure(Call<J1Jugador> call, Throwable t) {
                     Toast.makeText(PruebasJugador.this, "Fallo", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -173,18 +169,18 @@ public class PruebasJugador extends AppCompatActivity {
 
         if(TodoEnOrden(this, nombre, edad, email, password, ubicacion,telephone, id)){
 
-            Jugador jugador = new Jugador(nombre, Integer.parseInt(edad), email, password, ubicacion, telephone);
+            J1Jugador jugador = new J1Jugador(nombre, Integer.parseInt(edad), email, password, ubicacion, telephone);
 
-            Call<Jugador> call = mJugadorClient.update(id, jugador);
-            call.enqueue(new Callback<Jugador>() {
+            Call<J1Jugador> call = mJugadorClient.update(id, jugador);
+            call.enqueue(new Callback<J1Jugador>() {
                 @Override
-                public void onResponse(Call<Jugador> call, Response<Jugador> response) {
+                public void onResponse(Call<J1Jugador> call, Response<J1Jugador> response) {
                     Toast.makeText(PruebasJugador.this, response.body().getNombre(), Toast.LENGTH_SHORT).show();
                     mTextViewId.setText(response.body().get_id());
                 }
 
                 @Override
-                public void onFailure(Call<Jugador> call, Throwable t) {
+                public void onFailure(Call<J1Jugador> call, Throwable t) {
                     Toast.makeText(PruebasJugador.this, "Fallo", Toast.LENGTH_SHORT).show();
                 }
             });

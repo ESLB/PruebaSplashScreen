@@ -17,9 +17,9 @@ import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import wlind.levano.eduardo.pruebas.APIGOL.JugadorClient;
-import wlind.levano.eduardo.pruebas.APIGOL.RetrofitLab;
-import wlind.levano.eduardo.pruebas.APIGOL.models.Jugador;
+import wlind.levano.eduardo.pruebas.API.JugadorClient;
+import wlind.levano.eduardo.pruebas.API.RetrofitLab;
+import wlind.levano.eduardo.pruebas.API.models.J1Jugador;
 import wlind.levano.eduardo.pruebas.Pruebas.Jugadores;
 import wlind.levano.eduardo.pruebas.Pruebas.PruebasJugador;
 import wlind.levano.eduardo.pruebas.R;
@@ -91,7 +91,7 @@ public class LoggingActivity extends AppCompatActivity {
 
         if(TodoEnOrden(this, info, password)){
 
-            Jugador jugador = new Jugador();
+            J1Jugador jugador = new J1Jugador();
             jugador.setEmail(info);
             jugador.setTelephone(info);
             jugador.setPassword(password);
@@ -99,17 +99,17 @@ public class LoggingActivity extends AppCompatActivity {
             RetrofitLab retrofitLab = RetrofitLab.getRetrofitLab();
             JugadorClient mJugadorClient = retrofitLab.getRetrofit().create(JugadorClient.class);
 
-            Call<Jugador> call = mJugadorClient.autenticar(jugador);
-            call.enqueue(new Callback<Jugador>() {
+            Call<J1Jugador> call = mJugadorClient.autenticar(jugador);
+            call.enqueue(new Callback<J1Jugador>() {
                 @Override
-                public void onResponse(Call<Jugador> call, Response<Jugador> response) {
+                public void onResponse(Call<J1Jugador> call, Response<J1Jugador> response) {
                     if(response.body()!=null){
                         mEditor = mSharedPreferences.edit();
                         mEditor.putBoolean("isLoginKey", true);
                         mEditor.apply();
                         //mTVPruebasLogin.setText(response.body().getNombre());
                         Toast.makeText(LoggingActivity.this, "Bienvenido " + response.body().getNombre(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoggingActivity.this, InicioActivity.class));
+                        startActivity(new Intent(LoggingActivity.this, DrawerActivity.class));
                         finish();
                     }else{
                         Toast.makeText(LoggingActivity.this, "Datos incorrectos" + response.body().getNombre(), Toast.LENGTH_SHORT).show();
@@ -118,7 +118,7 @@ public class LoggingActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<Jugador> call, Throwable t) {
+                public void onFailure(Call<J1Jugador> call, Throwable t) {
                     mTVPruebasLogin.setText("Algo salió mal");
                 }
             });
@@ -126,6 +126,8 @@ public class LoggingActivity extends AppCompatActivity {
         }
 
     }
+
+
 
     @OnClick(R.id.button_recyclerView)
     public void onBTRecyclerClick(){

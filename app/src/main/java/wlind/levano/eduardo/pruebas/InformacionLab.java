@@ -2,21 +2,20 @@ package wlind.levano.eduardo.pruebas;
 
 import java.util.ArrayList;
 
-import wlind.levano.eduardo.pruebas.APIGOL.EquipoClient;
-import wlind.levano.eduardo.pruebas.APIGOL.RetoClient;
-import wlind.levano.eduardo.pruebas.APIGOL.RetrofitLab;
-import wlind.levano.eduardo.pruebas.APIGOL.SolicitudClient;
-import wlind.levano.eduardo.pruebas.APIGOL.models.Equipo;
-import wlind.levano.eduardo.pruebas.APIGOL.models.Jugador;
-import wlind.levano.eduardo.pruebas.APIGOL.models.Reto;
-import wlind.levano.eduardo.pruebas.APIGOL.models.Solicitud;
+import wlind.levano.eduardo.pruebas.API.EquipoClient;
+import wlind.levano.eduardo.pruebas.API.RetoClient;
+import wlind.levano.eduardo.pruebas.API.RetrofitLab;
+import wlind.levano.eduardo.pruebas.API.SolicitudClient;
+import wlind.levano.eduardo.pruebas.API.models.E1Equipo;
+import wlind.levano.eduardo.pruebas.API.models.J1Jugador;
+import wlind.levano.eduardo.pruebas.API.models.Solicitud;
 
 public class InformacionLab {
 
     private static InformacionLab sInformacionLab;
-    private static Jugador mJugador;
+    private static J1Jugador mJugador;
 
-    private ArrayList<Equipo> mEquipos = new ArrayList<Equipo>();
+    private ArrayList<E1Equipo> mE1Equipos = new ArrayList<E1Equipo>();
     private ArrayList<Solicitud> mSolicitudes = new ArrayList<Solicitud>();
 
     //Cosas por hacer:
@@ -34,7 +33,7 @@ public class InformacionLab {
 
     }
 
-    public static InformacionLab getInformacionLab(Jugador jugador){
+    public static InformacionLab getInformacionLab(J1Jugador jugador){
         if(sInformacionLab == null){
             mJugador = jugador;
             sInformacionLab = new InformacionLab();
