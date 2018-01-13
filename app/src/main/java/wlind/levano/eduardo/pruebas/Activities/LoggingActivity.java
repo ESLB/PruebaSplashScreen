@@ -122,7 +122,6 @@ public class LoggingActivity extends AppCompatActivity {
                     mTVPruebasLogin.setText("Algo salió mal");
                 }
             });
-
             //mTVPruebasLogin.setText(info + password);
         }
 

@@ -16,16 +16,22 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 import wlind.levano.eduardo.pruebas.Fragments.FragmentBusquedaInicio;
+import wlind.levano.eduardo.pruebas.Fragments.FragmentContenedor;
 import wlind.levano.eduardo.pruebas.Fragments.FragmentMiPerfil;
 import wlind.levano.eduardo.pruebas.Fragments.FragmentMisEquipos;
 import wlind.levano.eduardo.pruebas.Fragments.FragmentMisSolicitudes;
 import wlind.levano.eduardo.pruebas.Fragments.FragmentPartidosProgramados;
+import wlind.levano.eduardo.pruebas.Pruebas.FragmentGreen;
+import wlind.levano.eduardo.pruebas.Pruebas.FragmentRed;
 import wlind.levano.eduardo.pruebas.R;
+import wlind.levano.eduardo.pruebas.Utilidades;
 
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentBusquedaInicio.OnFragmentInteractionListener,
         FragmentMisEquipos.OnFragmentInteractionListener, FragmentMiPerfil.OnFragmentInteractionListener,
-        FragmentMisSolicitudes.OnFragmentInteractionListener, FragmentPartidosProgramados.OnFragmentInteractionListener{
+        FragmentMisSolicitudes.OnFragmentInteractionListener, FragmentPartidosProgramados.OnFragmentInteractionListener,
+        FragmentContenedor.OnFragmentInteractionListener, FragmentGreen.OnFragmentInteractionListener,
+        FragmentRed.OnFragmentInteractionListener{
 
     ImageView mImageView;
 
@@ -48,8 +54,12 @@ public class DrawerActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        Fragment fragment = new FragmentBusquedaInicio();
-        getSupportFragmentManager().beginTransaction().add(R.id.content_main,fragment ).commit();
+        if(Utilidades.ValidaPantalla){
+
+            Fragment fragment = new FragmentBusquedaInicio();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragment ).commit();
+            Utilidades.ValidaPantalla = false;
+        }
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -99,7 +109,7 @@ public class DrawerActivity extends AppCompatActivity
         boolean isfragmentSeleccionado = false;
 
         if (id == R.id.misEquipos) {
-            fragment = new FragmentMisEquipos();
+            fragment = new FragmentContenedor();
             isfragmentSeleccionado = true;
         } else if (id == R.id.misSolicitudes) {
             fragment= new FragmentMisSolicitudes();

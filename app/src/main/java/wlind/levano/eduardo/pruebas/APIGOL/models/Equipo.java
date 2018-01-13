@@ -2,6 +2,8 @@ package wlind.levano.eduardo.pruebas.APIGOL.models;
 
 //nombre , numero
 
+import java.util.ArrayList;
+
 public class Equipo {
 
     private String _id;
@@ -12,6 +14,24 @@ public class Equipo {
     private String locacion;
     private boolean completo;
     private String equipoImagen;
+    private ArrayList<Reto> retos;
+    private ArrayList<Solicitud> solicitudes;
+
+    public ArrayList<Reto> getRetos() {
+        return retos;
+    }
+
+    public void setRetos(ArrayList<Reto> retos) {
+        this.retos = retos;
+    }
+
+    public ArrayList<Solicitud> getSolicitudes() {
+        return solicitudes;
+    }
+
+    public void setSolicitudes(ArrayList<Solicitud> solicitudes) {
+        this.solicitudes = solicitudes;
+    }
 
     public Equipo(String nombre, Integer numero) {
         this.nombre = nombre;
