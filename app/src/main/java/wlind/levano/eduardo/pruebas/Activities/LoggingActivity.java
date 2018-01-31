@@ -89,6 +89,8 @@ public class LoggingActivity extends AppCompatActivity {
         info = mETInfo.getText().toString();
         password = mETPassword.getText().toString();
 
+
+
         if(TodoEnOrden(this, info, password)){
 
             J1Jugador jugador = new J1Jugador();
@@ -123,6 +125,8 @@ public class LoggingActivity extends AppCompatActivity {
                 }
             });
             //mTVPruebasLogin.setText(info + password);
+        } else{
+            startActivity(new Intent(LoggingActivity.this, DrawerActivity.class));
         }
 
     }

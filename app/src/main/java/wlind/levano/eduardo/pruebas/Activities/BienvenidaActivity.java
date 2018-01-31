@@ -23,8 +23,6 @@ public class BienvenidaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bienvenida);
         ButterKnife.bind(this);
 
-
-
     }
 
     @OnClick(R.id.buttonLogOut)
