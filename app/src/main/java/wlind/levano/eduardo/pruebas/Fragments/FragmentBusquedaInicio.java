@@ -4,13 +4,19 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import wlind.levano.eduardo.pruebas.R;
+import wlind.levano.eduardo.pruebas.adapters.RecyclerEquipoAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,7 +40,9 @@ public class FragmentBusquedaInicio extends Fragment {
 
     Button buttonCrear;
     Button buttonBuscar;
+    RecyclerView recyclerView;
     View view;
+    List<String> mDatos;
 
     public FragmentBusquedaInicio() {
         // Required empty public constructor
@@ -65,12 +73,18 @@ public class FragmentBusquedaInicio extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        mDatos = new ArrayList<String>();
+        mDatos.add("Eduardo");
+        mDatos.add("Marcos");
+        mDatos.add("Pamela");
+
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_fragment_busqueda, container, false);
+        view = inflater.inflate(R.layout.fragment_busqueda, container, false);
         buttonBuscar = (Button) view.findViewById(R.id.buttonBuscar);
         buttonCrear = (Button) view.findViewById(R.id.buttonCrear);
         buttonCrear.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +99,10 @@ public class FragmentBusquedaInicio extends Fragment {
                 Toast.makeText(getContext(), "Buscar", Toast.LENGTH_SHORT).show();
             }
         });
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerEquipos);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        RecyclerEquipoAdapter adapter = new RecyclerEquipoAdapter(getContext(), mDatos);
+        recyclerView.setAdapter(adapter);
         return view;
     }
 
