@@ -72,12 +72,12 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <view
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@android:color/black"
-            tools:layout_editor_absoluteX="30dp"
-            tools:layout_editor_absoluteY="156dp" />
+        <!--<view-->
+            <!--android:layout_width="140dp"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:background="@android:color/black"-->
+            <!--tools:layout_editor_absoluteX="30dp"-->
+            <!--tools:layout_editor_absoluteY="156dp" />-->
 
         <TextView
             android:id="@+id/txtNumeroIntegrantes"
